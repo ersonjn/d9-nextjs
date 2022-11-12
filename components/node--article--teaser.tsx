@@ -14,7 +14,7 @@ export function NodeArticleTeaser({ node, ...props }: NodeArticleTeaserProps) {
       className="grid group relative md:grid-cols-[150px_1fr] gap-2 md:gap-6 items-start"
       {...props}
     >
-      {node.field_media_image && (
+      {/* {node.field_media_image && (
         <figure>
           <Image
             src={null}
@@ -25,7 +25,7 @@ export function NodeArticleTeaser({ node, ...props }: NodeArticleTeaserProps) {
             alt={node.field_media_image.resourceIdObjMeta.alt}
           />
         </figure>
-      )}
+      )} */}
       <div className="flex flex-col py-6 space-y-4">
         <div className="flex items-center space-x-1 text-xs leading-none uppercase">
           {node.uid?.display_name ? (

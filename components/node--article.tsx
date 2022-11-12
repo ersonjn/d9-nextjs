@@ -1,10 +1,10 @@
-import Image from "next/image"
-import { DrupalNode } from "next-drupal"
+import Image from "next/image";
+import { DrupalNode } from "next-drupal";
 
-import { absoluteUrl, formatDate } from "@/lib/utils"
+import { absoluteUrl, formatDate } from "@/lib/utils";
 
 interface NodeArticleProps {
-  node: DrupalNode
+  node: DrupalNode;
 }
 
 export function NodeArticle({ node, ...props }: NodeArticleProps) {
@@ -21,7 +21,7 @@ export function NodeArticle({ node, ...props }: NodeArticleProps) {
           ) : null}
           <span> - {formatDate(node.created)}</span>
         </div>
-        {node.field_media_image && (
+        {/* {node.field_media_image && (
           <figure>
             <Image
               src={null}
@@ -38,7 +38,7 @@ export function NodeArticle({ node, ...props }: NodeArticleProps) {
               </figcaption>
             )}
           </figure>
-        )}
+        )} */}
         {node.body?.processed && (
           <div
             dangerouslySetInnerHTML={{ __html: node.body?.processed }}
@@ -47,5 +47,5 @@ export function NodeArticle({ node, ...props }: NodeArticleProps) {
         )}
       </div>
     </article>
-  )
+  );
 }
