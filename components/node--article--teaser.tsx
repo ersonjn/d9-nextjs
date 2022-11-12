@@ -17,7 +17,7 @@ export function NodeArticleTeaser({ node, ...props }: NodeArticleTeaserProps) {
       {node.field_media_image && (
         <figure>
           <Image
-            // src={absoluteUrl(node.field_media_image.uri.url)}
+            src={null}
             width={150}
             height={180}
             layout="responsive"

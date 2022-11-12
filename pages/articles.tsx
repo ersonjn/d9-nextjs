@@ -1,16 +1,16 @@
-import Head from "next/head"
-import { GetStaticPropsResult } from "next"
-import { DrupalNode } from "next-drupal"
-import { DrupalJsonApiParams } from "drupal-jsonapi-params"
+import Head from "next/head";
+import { GetStaticPropsResult } from "next";
+import { DrupalNode } from "next-drupal";
+import { DrupalJsonApiParams } from "drupal-jsonapi-params";
 
-import { drupal } from "@/lib/drupal"
-import { config } from "@/lib/config"
-import { Layout } from "@/components/layout"
-import { NodeArticleTeaser } from "@/components/node--article--teaser"
-import { SectionHeading } from "@/components/section-heading"
+import { drupal } from "@/lib/drupal";
+import { config } from "@/lib/config";
+import { Layout } from "@/components/layout";
+import { NodeArticleTeaser } from "@/components/node--article--teaser";
+import { SectionHeading } from "@/components/section-heading";
 
 interface ArticlesPageProps {
-  articles: DrupalNode[]
+  articles: DrupalNode[];
 }
 
 export default function ArticlesPage({ articles }: ArticlesPageProps) {
@@ -41,7 +41,7 @@ export default function ArticlesPage({ articles }: ArticlesPageProps) {
         )}
       </section>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps(
@@ -54,23 +54,24 @@ export async function getStaticProps(
     {
       params: new DrupalJsonApiParams()
         .addFields("node--article", [
-          "title",
-          "path",
-          "field_image",
+          "node_type",
+          "revision_uid",
           "uid",
-          "created",
+          "menu_link",
+          "field_media_image",
+          "field_tags",
         ])
         .addFilter("status", "1")
-        .addInclude(["field_image", "uid"])
+        .addInclude(["field_media_image", "uid"])
         .addSort("created", "desc")
         .getQueryObject(),
     }
-  )
+  );
 
   return {
     props: {
       articles,
     },
     revalidate: 10,
-  }
+  };
 }

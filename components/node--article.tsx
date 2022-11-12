@@ -21,20 +21,20 @@ export function NodeArticle({ node, ...props }: NodeArticleProps) {
           ) : null}
           <span> - {formatDate(node.created)}</span>
         </div>
-        {node.field_image && (
+        {node.field_media_image && (
           <figure>
             <Image
-              src={absoluteUrl(node.field_image.uri.url)}
+              src={null}
               width={864}
               height={460}
               layout="responsive"
               objectFit="cover"
-              alt={node.field_image.resourceIdObjMeta.alt}
+              alt={node.field_media_image.resourceIdObjMeta.alt}
               priority
             />
-            {node.field_image.resourceIdObjMeta.alt && (
+            {node.field_media_image.resourceIdObjMeta.alt && (
               <figcaption className="py-2 text-sm text-center text-gray-600">
-                {node.field_image.resourceIdObjMeta.alt}
+                {node.field_media_image.resourceIdObjMeta.alt}
               </figcaption>
             )}
           </figure>
