@@ -14,7 +14,7 @@ This is a starter template for building a decoupled Next.js site on Pantheon Dec
 Run the following command to create a new Next.js project:
 
 ```
-npx create-next-app -e https://github.com/chapter-three/pantheon-next-starter
+npx create-next-app -e https://github.com/pantheon-systems/chapter-three-next-for-drupal-starter
 ```
 
 This will create a new starter project. [See project structure](#project-structure).
