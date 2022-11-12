@@ -24,7 +24,7 @@ export function NodeArticle({ node, ...props }: NodeArticleProps) {
         {/* {node.field_media_image && (
           <figure>
             <Image
-              src={null}
+              src={absoluteUrl(node.field_media_image.uri.url}
               width={864}
               height={460}
               layout="responsive"
