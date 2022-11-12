@@ -38,7 +38,7 @@ DRUPAL_CLIENT_SECRET=8AJCcfoesu767rhS3rqou
 
 ### Start Development Server
 
-To start the Next.js development server, run `yarn dev`. This starts the development server on `http://localhost:3000`.
+To start the Next.js development server, run `npx next dev` or `yarn dev`. This starts the development server on `http://localhost:3000`.
 
 Visit [http://localhost:3000](http://localhost:3000) to view the Next.js site.
 
